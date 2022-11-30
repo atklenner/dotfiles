@@ -1,7 +1,7 @@
-local nnoremap = require("theprimeagen.keymap").nnoremap
-local xnoremap = require("theprimeagen.keymap").xnoremap
-local inoremap = require("theprimeagen.keymap").inoremap
-local vnoremap = require("theprimeagen.keymap").vnoremap
+local nnoremap = require("andrew.keymap").nnoremap
+local xnoremap = require("andrew.keymap").xnoremap
+local inoremap = require("andrew.keymap").inoremap
+local vnoremap = require("andrew.keymap").vnoremap
 
 -- nvim-tree keymaps
 nnoremap("<leader>e", ":NvimTreeToggle<CR>")
@@ -27,8 +27,8 @@ nnoremap("<leader>th", ":tabp<CR>") -- move to left tab
 nnoremap("<leader>tl", ":tabn<CR>") -- move to right tab
 
 -- let "jk" and "kj" exit insert mode
-inoremap("jk", "<Esc>")
-inoremap("kj", "<Esc>")
+-- inoremap("jk", "<Esc>")
+-- inoremap("kj", "<Esc>")
 
 -- stay in visual mode on indent
 vnoremap(">", ">gv")
@@ -47,5 +47,5 @@ xnoremap("<A-k>", ":m '<-2<CR>gv-gv")
 -- nnoremap("<S-h>", ":bprevious<CR>")
 
 -- save shortcut
-nnoremap("<C-s>", ":w")
-inoremap("<C-s>", "<Esc>:w<CR>li")
+nnoremap("<C-s>", ":w<CR>")
+inoremap("<C-s>", "<Esc>:w<CR>l")
