@@ -2,6 +2,7 @@ local nnoremap = require("andrew.keymap").nnoremap
 local xnoremap = require("andrew.keymap").xnoremap
 local inoremap = require("andrew.keymap").inoremap
 local vnoremap = require("andrew.keymap").vnoremap
+local tnoremap = require("andrew.keymap").tnoremap
 
 -- nvim-tree keymaps
 nnoremap("<leader>e", ":NvimTreeToggle<CR>")
@@ -12,6 +13,16 @@ nnoremap("<C-l>", "<C-w>l")
 nnoremap("<C-j>", "<C-w>j")
 nnoremap("<C-k>", "<C-w>k")
 
+-- move in and out of a terminal
+tnoremap("<C-h>", "<C-\\><C-N><C-w>h")
+tnoremap("<C-j>", "<C-\\><C-N><C-w>j")
+tnoremap("<C-k>", "<C-\\><C-N><C-w>k")
+tnoremap("<C-l>", "<C-\\><C-N><C-w>l")
+inoremap("<C-h>", "<C-\\><C-N><C-w>h")
+inoremap("<C-j>", "<C-\\><C-N><C-w>j")
+inoremap("<C-k>", "<C-\\><C-N><C-w>k")
+inoremap("<C-l>", "<C-\\><C-N><C-w>l")
+
 -- window managemnt
 nnoremap("<leader>sv", "<C-w>v") -- veritcal split
 nnoremap("<leader>sx", "<C-w>s") -- horizontal split
@@ -19,6 +30,7 @@ nnoremap("<leader>se", "<C-w>=") -- equalize width/height of splits
 nnoremap("<leader>sm", "<C-w>_<C-w>|") -- maximize current window
 nnoremap("<leader>sc", ":close<CR>") -- close current split
 nnoremap("<leader>sf", "<C-w>v<C-w>s<C-w>l<C-w>s") -- split into four windows
+nnoremap("<leader>st", ":terminal<CR>") -- opens terminal in current split
 
 -- tab navigation
 nnoremap("<leader>to", ":tabnew<CR>") -- open new tab
@@ -49,3 +61,9 @@ xnoremap("<A-k>", ":m '<-2<CR>gv-gv")
 -- save shortcut
 nnoremap("<C-s>", ":w<CR>")
 inoremap("<C-s>", "<Esc>:w<CR>l")
+
+-- telescope shortcuts
+nnoremap("<leader>ff", ":Telescope find_files<CR>")
+nnoremap("<leader>fg", ":Telescope live_grep<CR>")
+nnoremap("<leader>fb", ":Telescope buffers<CR>")
+nnoremap("<leader>fh", ":Telescope help_tags<CR>")

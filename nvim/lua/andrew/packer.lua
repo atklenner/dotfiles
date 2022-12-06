@@ -26,9 +26,28 @@ return require('packer').startup(function(use)
   -- status line, works with the theme I am using
   use 'nvim-lualine/lualine.nvim'
 
+  -- pop-up terminal
+  use 'akinsho/toggleterm.nvim'
+
   -- fuzzy finder
   use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
+
+  use 'TimUntersberger/neogit'
+
+  -- anything below this line I don't understand and need to work on
 
   -- syntax highlighting
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -39,4 +58,14 @@ return require('packer').startup(function(use)
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
   }
+
+  -- cmp stuff
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
 end)
