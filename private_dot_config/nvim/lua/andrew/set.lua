@@ -25,4 +25,4 @@ vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " " -- set <leader> key to space
 
-vim.g.mouse = "a" -- allows mouse to resize windows
+vim.g.mouse = "a" -- allows mouse to resize windowso

@@ -6,4 +6,4 @@ require("nvim-tree").setup({
       },
     },
   },
-}) 
+})
