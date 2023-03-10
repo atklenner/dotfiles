@@ -11,18 +11,17 @@ vim.opt.wrap = false -- disable line wrap
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 vim.opt.termguicolors = true
 
+vim.opt.sidescrolloff = 8
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
-vim.opt.updatetime = 750
+vim.opt.updatetime = 300
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 
-vim.g.mapleader = " " -- set <leader> key to space
+vim.opt.swapfile = false
 
-vim.g.mouse = "a" -- allows mouse to resize windowso
+vim.opt.splitbelow = true
+vim.opt.splitright = true
