@@ -39,20 +39,13 @@ return {
         'astro',
         'bashls',
         'cssls',
-        'dockerls',
         'eslint',
         'html',
-        'intelephense',
         'jsonls',
-        'rust_analyzer',
-        'sqlls',
         'lua_ls',
-        'svelte',
         'tailwindcss',
         'tsserver',
         'vimls',
-        'volar',
-        'yamlls',
       })
 
       -- Configure lua language server for neovim
@@ -86,8 +79,8 @@ return {
       -- Configure keybindings
       local cmp = require("cmp")
       local cmp_mappings = lsp.defaults.cmp_mappings({
-            ['<C-k>'] = cmp.mapping.select_prev_item(),
-            ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
+        ['<C-j>'] = cmp.mapping.select_next_item(),
       })
 
       lsp.setup_nvim_cmp({
@@ -98,9 +91,9 @@ return {
           fields = { "kind", "abbr", "menu" },
           format = function(entry, vim_item)
             local kind = require("lspkind").cmp_format({
-                  mode = "symbol_text",
-                  maxwidth = 50,
-                })(entry, vim_item)
+              mode = "symbol_text",
+              maxwidth = 50,
+            })(entry, vim_item)
             local strings = vim.split(kind.kind, "%s", { trimempty = true })
             kind.kind = " " .. (strings[1] or "") .. " "
             kind.menu = "    (" .. (strings[2] or "") .. ")"
